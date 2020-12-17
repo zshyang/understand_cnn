@@ -164,7 +164,7 @@ def backward(forward_network: list, layer_index: int, input_batch: torch.Tensor)
 
     fig, ax = plt.subplots(nrows=8, ncols=8, figsize=(50, 50))
 
-    counter = 254
+    counter = 0
     for row in ax:
         for col in row:
             index = [i for i in range(output.shape[1])]
@@ -239,6 +239,8 @@ def construct_deconv(information):
 def main():
     """The main function to visualize the convolution filters.
     """
+    layer_num = 4
+
     model = torch.hub.load('pytorch/vision:v0.6.0', 'vgg11', pretrained=True)
     model.eval()
     model.to(device)
@@ -255,7 +257,7 @@ def main():
     for classifier_layer in model.classifier:
         forward_network.append(classifier_layer)
 
-    backward(forward_network, layer_index=11, input_batch=input_batch)
+    backward(forward_network, layer_index=layer_num, input_batch=input_batch)
 
 
 if __name__ == '__main__':
