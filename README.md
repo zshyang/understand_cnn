@@ -13,7 +13,7 @@ python main.py
 
 And here is an example image to visualize the 4th layer in the network.
 
-![layer 4](/home/george/04.png)
+![layer 4](https://github.com/zshyang/understand_cnn/blob/main/04.png)
 
 ## Issues:
 
